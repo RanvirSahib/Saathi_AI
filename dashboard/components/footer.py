@@ -1,6 +1,12 @@
-from components.metric_cards import metric_card
+import streamlit as st
 
-metric_card(
-    "Average Attention",
-    91
-)
+
+def show_footer():
+
+    st.divider()
+
+    st.caption(
+
+        "🧠 Saathi AI v2.0 | OpenCV • MediaPipe • EfficientNet-B0 • Gemini • PostgreSQL"
+
+    )

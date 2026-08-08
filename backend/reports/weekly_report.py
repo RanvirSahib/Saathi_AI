@@ -1,6 +1,7 @@
 from backend.analytics.learning_score import (
     calculate_learning_health_score
 )
+from backend.services.audit_service import log_event
 
 
 def generate_weekly_report(df):
@@ -98,3 +99,13 @@ def generate_weekly_report(df):
         "Recommendations": recommendation
 
     }
+
+log_event(
+
+    role="Student",
+
+    action="Weekly Report Generated",
+
+    resource="Weekly Report"
+
+)

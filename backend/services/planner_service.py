@@ -1,5 +1,6 @@
 from backend.database.db import SessionLocal
 from backend.models.study_plan import StudyPlan
+from backend.services.audit_service import log_event
 
 
 def save_plan(
@@ -30,6 +31,15 @@ def save_plan(
     finally:
         db.close()
 
+log_event(
+
+    role="Student",
+
+    action="Study Plan Generated",
+
+    resource="Study Planner"
+
+)
 
 def get_latest_plan():
 

@@ -1,6 +1,8 @@
-from components.metric_cards import metric_card
+import streamlit as st
 
-metric_card(
-    "Average Attention",
-    91
-)  
+st.sidebar.image(
+    "dashboard/assets/logo.png",
+    width=120
+)
+
+st.sidebar.markdown("## Saathi AI")

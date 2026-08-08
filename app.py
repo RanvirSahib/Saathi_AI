@@ -26,6 +26,13 @@ from modules.saathi_assistant import (
 
 from modules.text_to_speech import speak
 
+from backend.services.job_service import (
+    start_analysis_job,
+    finish_analysis_job
+)
+
+
+
 last_ai_time = 0
 
 AI_INTERVAL = 30
@@ -39,6 +46,7 @@ ai_busy = False
 
 last_response = ""  
 
+job_id = start_analysis_job()
 
 def get_ai_response(
     attention_state,
@@ -266,3 +274,5 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
+
+finish_analysis_job(job_id)
